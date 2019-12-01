@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="row">
+    <form #surveyForm="ngForm" (ngSubmit)="onSubmit(surveyForm)">
+      <h3>Please complete survey and tell us about your visit!</h3>
+      <div class="ui-inputgroup icon-fields">
+        <span class="ui-inputgroup-addon"><i class="fa fa-user" style="line-height: 1.25;"></i></span>
+        <input class="form-input" type="text" pInputText placeholder="First Name" name="firstName" required ngModel>
+      </div>
+      <div class="ui-inputgroup icon-fields">
+        <span class="ui-inputgroup-addon"><i class="fa fa-user" style="line-height: 1.25;"></i></span>
+        <input class="form-input" type="text" pInputText placeholder="Last Name" name="lastName" required ngModel>
+      </div>
+      <div class="ui-inputgroup icon-fields">
+        <span class="ui-inputgroup-addon"><i class="fa fa-home" style="line-height: 1.25;"></i></span>
+        <input class="form-input" type="text" pInputText placeholder="Street Address" name="address" required ngModel>
+      </div>
+      <div class="ui-inputgroup icon-fields">
+        <span class="ui-inputgroup-addon"><i class="fa fa-building-o" style="line-height: 1.25;"></i></span>
+        <input class="form-input" type="text" pInputText placeholder="City" name="city" required ngModel>
+      </div>
+      <div class="ui-inputgroup icon-fields">
+        <span class="ui-inputgroup-addon"><i class="fa fa-map-o" style="line-height: 1.25;"></i></span>
+        <input class="form-input" type="text" pInputText placeholder="State" name="state" required ngModel>
+      </div>
+      <div class="ui-inputgroup icon-fields">
+        <span class="ui-inputgroup-addon"><i class="fa fa-compass" style="line-height: 1.25;"></i></span>
+        <input class="form-input" type="text" pInputText placeholder="Zip" name="zip" required ngModel>
+      </div>
+      <div class="ui-inputgroup icon-fields">
+        <span class="ui-inputgroup-addon"><i class="fa fa-phone" style="line-height: 1.25;"></i></span>
+        <input class="form-input" type="text" pInputText placeholder="Telephone Number" name="phoneNumber" required
+          ngModel>
+      </div>
+      <div class="ui-inputgroup icon-fields">
+        <span class="ui-inputgroup-addon"><i class="fa fa-envelope-o" style="line-height: 1.25;"></i></span>
+        <input class="form-input" type="text" pInputText placeholder="Email" name="email" required ngModel>
+      </div>
+      <div class="icon-fields">
+        Enter date of survey:
+        <p-calendar class="form-input icon-fields" showButtonBar="true" showIcon="true" name="surveyDate" required
+          ngModel></p-calendar>
+      </div>
+      <div class="icon-fields">
+        Select what you liked most about campus (multiple):<br>
+        <p-checkbox name="students" value="val1" label="students" [(ngModel)]="selectedLikedMost"></p-checkbox><br>
+        <p-checkbox name="location" value="val2" label="location" [(ngModel)]="selectedLikedMost"></p-checkbox><br>
+        <p-checkbox name="campus" value="val3" label="campus" [(ngModel)]="selectedLikedMost"></p-checkbox><br>
+        <p-checkbox name="atmosphere" value="val4" label="atmosphere" [(ngModel)]="selectedLikedMost"></p-checkbox><br>
+        <p-checkbox name="dorm rooms" value="val5" label="dorm rooms" [(ngModel)]="selectedLikedMost"></p-checkbox><br>
+        <p-checkbox name="sports" value="val6" label="sports" [(ngModel)]="selectedLikedMost"></p-checkbox>
+      </div>
+      <div class="icon-fields">
+        How did you become interested in the university?<br>
+        <p-radioButton name="groupname" value="val1" label="friends" [(ngModel)]="selectedInterested"></p-radioButton><br>
+        <p-radioButton name="groupname" value="val2" label="television" [(ngModel)]="selectedInterested"></p-radioButton><br>
+        <p-radioButton name="groupname" value="val2" label="internet" [(ngModel)]="selectedInterested"></p-radioButton><br>
+        <p-radioButton name="groupname" value="val2" label="other" [(ngModel)]="selectedInterested"></p-radioButton><br>
+      </div>
+      <div class="icon-fields">
+        What is the likelihood you would recommend this school to other prospective students?<br>
+        <p-listbox [options]="recommendationOptions" [(ngModel)]="selectedRecommendation" name="recommendation"></p-listbox>
+      </div>
+      <p-button type="submit" label="Submit" class="ui-button-rounded form-buttons" styleClass="ui-button-success"
+        [style]="{'width':'200px'}"></p-button>
+      <p-button (click)="clearForm(surveyForm)" label="Reset" class="ui-button-rounded form-buttons"
+        styleClass="ui-button-danger" [style]="{'width':'200px'}"></p-button>
+    </form>
+  </div>
+</div>
