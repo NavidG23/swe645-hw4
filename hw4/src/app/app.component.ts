@@ -7,6 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  homeTabSelected = false;
+  surveyTabSelected = false;
+  listTabSelected = false;
+
   constructor(private router: Router) { }
 
   handleChange(e) {

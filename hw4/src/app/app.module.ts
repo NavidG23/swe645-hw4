@@ -1,3 +1,6 @@
+// Lambda import
+import * as lambdaPostFunction from './modules/lambda-1-angular/lambda-1-angular.module';
+
 // Angular imports
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,19 +15,24 @@ import { CalendarModule } from 'primeng/calendar';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ListboxModule } from 'primeng/listbox';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import { TableModule } from 'primeng/table';
 import { TabViewModule } from 'primeng/tabview';
 
-// Component imports
+// Component and Service imports
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routedComponents } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { StudentSurveyComponent } from './student-survey/student-survey.component';
 import { SurveyListComponent } from './survey-list/survey-list.component';
+import { SuccessComponent } from './success/success.component';
+import { StudentSurveyService } from './student-survey/student-survey.service';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'survey', component: StudentSurveyComponent },
   { path: 'list', component: SurveyListComponent },
+  { path: 'success', component: SuccessComponent },
+
 ]
 @NgModule({
   declarations: [
@@ -32,7 +40,8 @@ const appRoutes: Routes = [
     StudentSurveyComponent,
     SurveyListComponent,
     HomeComponent,
-    routedComponents
+    routedComponents,
+    SuccessComponent
   ],
   imports: [
     AccordionModule,
@@ -43,12 +52,14 @@ const appRoutes: Routes = [
     CalendarModule,
     CheckboxModule,
     FormsModule,
+    lambdaPostFunction.Lambda1AngularModule,
     ListboxModule,
+    TableModule,
     TabViewModule,
     RadioButtonModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [], // add services here
+  providers: [StudentSurveyService], // add services here
   bootstrap: [AppComponent]
 })
 export class AppModule { }

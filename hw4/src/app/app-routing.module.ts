@@ -4,25 +4,30 @@ import { AppComponent } from './app.component';
 import { SurveyListComponent } from './survey-list/survey-list.component';
 import { StudentSurveyComponent } from './student-survey/student-survey.component';
 import { HomeComponent } from './home/home.component';
+import { LambdaInvokeComponent } from './modules/lambda-1-angular/components/lambda-invoke/lambda-invoke.component';
 
 const routes: Routes = [
   {
-      path: 'home',
-      component: HomeComponent
+    path: 'home',
+    component: HomeComponent
   },
   {
-      path: 'survey',
-      component: StudentSurveyComponent
+    path: 'survey',
+    component: StudentSurveyComponent
   },
   {
-      path: 'list',
-      component: SurveyListComponent
+    path: 'list',
+    component: SurveyListComponent
   },
   {
-      path: '',
-      redirectTo: '/home',
-      pathMatch: 'full'
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
   },
+  {
+    path: 'lambda-invoke',
+    component: LambdaInvokeComponent
+  }
 ];
 
 @NgModule({

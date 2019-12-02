@@ -4,57 +4,137 @@
       <h3>Please complete survey and tell us about your visit!</h3>
       <div class="ui-inputgroup icon-fields">
         <span class="ui-inputgroup-addon"><i class="fa fa-user" style="line-height: 1.25;"></i></span>
-        <input class="form-input" type="text" pInputText placeholder="First Name" name="firstName" required ngModel>
+        <input
+          class="form-input"
+          type="text"
+          pInputText
+          placeholder="First Name"
+          name="firstName"
+          required
+          ngModel
+          #fname="ngModel">
+        <small [hidden]="fname.valid || (fname.pristine && !surveyForm.submitted)" class="field-errors">Please enter your first name</small>
       </div>
       <div class="ui-inputgroup icon-fields">
         <span class="ui-inputgroup-addon"><i class="fa fa-user" style="line-height: 1.25;"></i></span>
-        <input class="form-input" type="text" pInputText placeholder="Last Name" name="lastName" required ngModel>
+        <input
+          class="form-input"
+          type="text"
+          pInputText
+          placeholder="Last Name"
+          name="lastName"
+          required
+          ngModel
+          #lname="ngModel">
+        <small [hidden]="lname.valid || (lname.pristine && !surveyForm.submitted)" class="field-errors">Please enter your last name</small>
       </div>
       <div class="ui-inputgroup icon-fields">
         <span class="ui-inputgroup-addon"><i class="fa fa-home" style="line-height: 1.25;"></i></span>
-        <input class="form-input" type="text" pInputText placeholder="Street Address" name="address" required ngModel>
+        <input
+          class="form-input"
+          type="text"
+          pInputText
+          placeholder="Street Address"
+          name="address"
+          required
+          ngModel
+          #address="ngModel">
+        <small [hidden]="address.valid || (address.pristine && !surveyForm.submitted)" class="field-errors">Please enter your address</small>
       </div>
       <div class="ui-inputgroup icon-fields">
         <span class="ui-inputgroup-addon"><i class="fa fa-building-o" style="line-height: 1.25;"></i></span>
-        <input class="form-input" type="text" pInputText placeholder="City" name="city" required ngModel>
+        <input
+          class="form-input"
+          type="text"
+          pInputText
+          placeholder="City"
+          name="city"
+          required
+          ngModel
+          #city="ngModel">
+        <small [hidden]="city.valid || (city.pristine && !surveyForm.submitted)" class="field-errors">Please enter city</small>
       </div>
       <div class="ui-inputgroup icon-fields">
         <span class="ui-inputgroup-addon"><i class="fa fa-map-o" style="line-height: 1.25;"></i></span>
-        <input class="form-input" type="text" pInputText placeholder="State" name="state" required ngModel>
+        <input
+          class="form-input"
+          type="text"
+          pInputText
+          placeholder="State"
+          name="state"
+          required
+          ngModel
+          #state="ngModel">
+        <small [hidden]="state.valid || (state.pristine && !surveyForm.submitted)" class="field-errors">Please enter state</small>
       </div>
       <div class="ui-inputgroup icon-fields">
         <span class="ui-inputgroup-addon"><i class="fa fa-compass" style="line-height: 1.25;"></i></span>
-        <input class="form-input" type="text" pInputText placeholder="Zip" name="zip" required ngModel>
+        <input
+          class="form-input"
+          type="text"
+          pInputText
+          placeholder="Zip"
+          name="zip"
+          required
+          ngModel
+          #zip="ngModel">
+        <small [hidden]="zip.valid || (zip.pristine && !surveyForm.submitted)" class="field-errors">Please enter zip code</small>
       </div>
       <div class="ui-inputgroup icon-fields">
         <span class="ui-inputgroup-addon"><i class="fa fa-phone" style="line-height: 1.25;"></i></span>
-        <input class="form-input" type="text" pInputText placeholder="Telephone Number" name="phoneNumber" required
-          ngModel>
+        <input
+          class="form-input"
+          type="text"
+          pInputText
+          placeholder="Telephone Number"
+          name="phone"
+          required
+          ngModel
+          #pNumber="ngModel">
+        <small [hidden]="pNumber.valid || (pNumber.pristine && !surveyForm.submitted)" class="field-errors">Please enter your phone number</small>
       </div>
       <div class="ui-inputgroup icon-fields">
         <span class="ui-inputgroup-addon"><i class="fa fa-envelope-o" style="line-height: 1.25;"></i></span>
-        <input class="form-input" type="text" pInputText placeholder="Email" name="email" required ngModel>
+        <input
+          class="form-input"
+          type="text"
+          pInputText
+          placeholder="Email"
+          name="email"
+          required
+          email
+          ngModel
+          #email="ngModel">
+        <small [hidden]="email.valid || (email.pristine && !surveyForm.submitted)" class="field-errors">Please enter your email</small>
       </div>
       <div class="icon-fields">
         Enter date of survey:
-        <p-calendar class="form-input icon-fields" showButtonBar="true" showIcon="true" name="surveyDate" required
-          ngModel></p-calendar>
+        <p-calendar
+          class="form-input icon-fields"
+          showButtonBar="true"
+          showIcon="true"
+          name="surveyDate"
+          required
+          ngModel
+          #date="ngModel">
+        </p-calendar>
+        <small [hidden]="date.valid || (date.pristine && !surveyForm.submitted)" class="field-errors">Please enter today's date</small>
       </div>
       <div class="icon-fields">
-        Select what you liked most about campus (multiple):<br>
-        <p-checkbox name="students" value="val1" label="students" [(ngModel)]="selectedLikedMost"></p-checkbox><br>
-        <p-checkbox name="location" value="val2" label="location" [(ngModel)]="selectedLikedMost"></p-checkbox><br>
-        <p-checkbox name="campus" value="val3" label="campus" [(ngModel)]="selectedLikedMost"></p-checkbox><br>
-        <p-checkbox name="atmosphere" value="val4" label="atmosphere" [(ngModel)]="selectedLikedMost"></p-checkbox><br>
-        <p-checkbox name="dorm rooms" value="val5" label="dorm rooms" [(ngModel)]="selectedLikedMost"></p-checkbox><br>
-        <p-checkbox name="sports" value="val6" label="sports" [(ngModel)]="selectedLikedMost"></p-checkbox>
+        Select what you liked most about campus (Select multiple):<br>
+        <p-checkbox name="students" value="students" label="students" [(ngModel)]="selectedLikedMost"></p-checkbox><br>
+        <p-checkbox name="location" value="location" label="location" [(ngModel)]="selectedLikedMost"></p-checkbox><br>
+        <p-checkbox name="campus" value="campus" label="campus" [(ngModel)]="selectedLikedMost"></p-checkbox><br>
+        <p-checkbox name="atmosphere" value="atmosphere" label="atmosphere" [(ngModel)]="selectedLikedMost"></p-checkbox><br>
+        <p-checkbox name="dorm rooms" value="dorm rooms" label="dorm rooms" [(ngModel)]="selectedLikedMost"></p-checkbox><br>
+        <p-checkbox name="sports" value="sports" label="sports" [(ngModel)]="selectedLikedMost"></p-checkbox>
       </div>
       <div class="icon-fields">
         How did you become interested in the university?<br>
-        <p-radioButton name="groupname" value="val1" label="friends" [(ngModel)]="selectedInterested"></p-radioButton><br>
-        <p-radioButton name="groupname" value="val2" label="television" [(ngModel)]="selectedInterested"></p-radioButton><br>
-        <p-radioButton name="groupname" value="val2" label="internet" [(ngModel)]="selectedInterested"></p-radioButton><br>
-        <p-radioButton name="groupname" value="val2" label="other" [(ngModel)]="selectedInterested"></p-radioButton><br>
+        <p-radioButton name="groupname" value="friends" label="friends" [(ngModel)]="selectedInterested"></p-radioButton><br>
+        <p-radioButton name="groupname" value="television" label="television" [(ngModel)]="selectedInterested"></p-radioButton><br>
+        <p-radioButton name="groupname" value="internet" label="internet" [(ngModel)]="selectedInterested"></p-radioButton><br>
+        <p-radioButton name="groupname" value="other" label="other" [(ngModel)]="selectedInterested"></p-radioButton><br>
       </div>
       <div class="icon-fields">
         What is the likelihood you would recommend this school to other prospective students?<br>

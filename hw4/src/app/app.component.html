@@ -4,9 +4,9 @@
       <div class="row" style="text-align: left;margin-left:10px">
         <div>
           <p-tabView (onChange)="handleChange($event)">
-            <p-tabPanel header="Home" routerLink="/home"></p-tabPanel>
-            <p-tabPanel header="Survey Form" routerLink="/survey"></p-tabPanel>
-            <p-tabPanel header="List of Surveys" routerLink="/list"></p-tabPanel>
+            <p-tabPanel header="Home" routerLink="/home" routerLinkActive="active" headerStyleClass="tabs"></p-tabPanel>
+            <p-tabPanel header="Survey Form" routerLink="/survey" routerLinkActive="active" headerStyleClass="tabs"></p-tabPanel>
+            <p-tabPanel header="List of Surveys" routerLink="/list" routerLinkActive="active" headerStyleClass="tabs"></p-tabPanel>
             <router-outlet></router-outlet>
           </p-tabView>
         </div>
