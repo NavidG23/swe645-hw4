@@ -24,7 +24,7 @@ export class SurveyListComponent implements OnInit {
     'Likely'
   );
   notionalData: Student[] = [];
-  students: Student[] = this.notionalData; // TODO: initialize empty once lamda is tied in
+  students: Student[] = this.notionalData; // TODO: initialize empty once lambda is tied in
 
   constructor(private studentSurveyService: StudentSurveyService) { }
 
